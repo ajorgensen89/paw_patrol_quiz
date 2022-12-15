@@ -1,30 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let level = document.getElementsByTagName("button");
+    let level = document.getElementsByClassName("play");
 
     for (let button of level) {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "submit") {
+                console.log("working");
                 findOutAnswer();
             } else {
                 let gamelevel = this.getAttribute("data-type");
+                console.log("working also");
                 quizGame(gameLevel);
             }
         });
     }
     // so enter can be pressed to submit answer instead of moving mouse and clicking.
-    document.getElementById("my-answer").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            findOutAnswer();
-        }
-    });
+    // document.getElementById("my-answer").addEventListener("keydown", function (event) {
+    //     if (event.key === "Enter") {
+    //         findOutAnswer();
+    //     }
+    // });
 });
-document.getElementsById("audio"); {
-    
-}
 
-
-
-let userName = [""];
+// let userName = document.getElementById('username');
+// userName = [];
+// userName.push(`${userName}`);
 
 let numberOfQuestions = [
     {
@@ -83,8 +82,25 @@ let numberOfQuestions = [
     },
 ];
 
+let quizQuestion = document.getElementById('question').innerText;
+let quizSolution = document.getElementById('answer1', 'answer2', 'answer3').innerText;
+let quizSubmit = getElementById('submit').innerText;
+
+gameLevel(quizQuestion, quizSolution, quizSubmit);
+
+let easyG = Math.random(numberOfQuestions) * 1;
+let mediumG = Math.random(numberOfQuestions) * 2;
+let hardG = Math.random(numberOfQuestions) * 3;
+
 function quizGame(gameLevel) {
 
+    if (gameLevel === "easy") {
+        easyG();
+    } else if (gameLevel === "medium") {
+        mediumG();
+    } else if (gameLevel === "hard") {
+        hardG();
+    }
 }
 
 function findOutAnswer() {
