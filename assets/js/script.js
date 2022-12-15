@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let level = document.getElementsByClassName("play");
+    let button = document.getElementsByClassName("buttons");
 
-    for (let button of level) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") === "submit") {
+    for (let button of buttons) {
+        playGame.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "easy") {
                 console.log("working");
                 findOutAnswer();
-            } else {
-                let gamelevel = this.getAttribute("data-type");
+            } else if (this.getAttribute("data-type") === "medium") {
+                ;
                 console.log("working also");
-                quizGame(gameLevel);
+                gameLevel(quizGame);
             }
         });
+        gameLevel(quizGame);
     }
     // so enter can be pressed to submit answer instead of moving mouse and clicking.
     // document.getElementById("my-answer").addEventListener("keydown", function (event) {
@@ -82,35 +83,44 @@ let numberOfQuestions = [
     },
 ];
 
-let quizQuestion = document.getElementById('question').innerText;
-let quizSolution = document.getElementById('answer1', 'answer2', 'answer3').innerText;
-let quizSubmit = getElementById('submit').innerText;
+// let quizQuestion = document.getElementById('question').innerText;
+// let quizSolution = document.getElementById('answer1', 'answer2', 'answer3').innerText;
+// let quizSubmit = getElementById('submit').innerText;
 
-gameLevel(quizQuestion, quizSolution, quizSubmit);
+// gameLevel(quizQuestion, quizSolution, quizSubmit);
 
-let easyG = Math.random(numberOfQuestions) * 1;
-let mediumG = Math.random(numberOfQuestions) * 2;
-let hardG = Math.random(numberOfQuestions) * 3;
+// let easyG = Math.random(numberOfQuestions) * 1;
+// let mediumG = Math.random(numberOfQuestions) * 2;
+// let hardG = Math.random(numberOfQuestions) * 3;
 
-function quizGame(gameLevel) {
+// function quizGame(gameLevel) {
 
-    if (gameLevel === "easy") {
-        easyG();
-    } else if (gameLevel === "medium") {
-        mediumG();
-    } else if (gameLevel === "hard") {
-        hardG();
-    }
-}
+//     if (gameLevel === "easy") {
+//         easyG();
+//     } else if (gameLevel === "medium") {
+//         mediumG();
+//     } else if (gameLevel === "hard") {
+//         hardG();
+//     }
+// };
 
-function findOutAnswer() {
+// function findOutAnswer() {
+//     for (numberOfQuestions = 0; numberOfQuestions.length < 1; ) {
+//         easyG();
+//         console.log("game");
+//     };
+// };
 
-}
+// function correctAnswerScore() {
 
-function correctAnswerScore() {
+// }
 
-}
+// function incorrectAnswerScore() {
 
-function incorrectAnswerScore() {
+// }
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
 
-}
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
