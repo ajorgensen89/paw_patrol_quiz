@@ -5,54 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link to CSS, rules, level, game, back-form, scores and form files-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="submission form" href="form.html">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet"> -->
+    <link rel="submission-form" href="form.html">
+    <link rel="back-form" href="back-form.html">
+    <link rel="rules-page" href="rules.html">
+    <link rel="levels-of-game" href="levels.html">
+    <link rel="game-form" href="game.html">
+    <link rel="scoring" href="score.html">
+    <!--links to google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Luckiest+Guy&family=Sen&display=swap"
         rel="stylesheet">
+    <!--links for favicon icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">    
-
-    <title>Document</title>
+    <title>Paw Patrol Kids Quiz</title>
 </head>
 
 <body>
-    <header>
-        <h1>Paw Patrol Kids Quiz</h1>
-    </header>
-    <div>game board
-        <div>username</div>
-        <div>games modes</div>
-        <div>questions and answers</div>
-        <button>submit button</button>
-        <div>tally zone</div>
-    </div>
     <div>
-        <form>
-            <p>kids name </p>
-            <p>username</p>
-            <p>Parent email (with permission)</p>
-            <p>Suggestion box</p>
-        </form>
+        <header>
+            <h1>Paw Patrol Kids Quiz</h1>
+        </header>
+        <!--navigation links via icons to home, audio and menu list-->
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-igloo"></i></a>
+            <a id="audio"><i class="fa-solid fa-play" class="fa-solid fa-pause"></i></a>
+            <a><i class="fa-regular fa-rectangle-list"></i></a>
+        </nav>
+
+        <div>game board
+            <!--create username-->
+            <div>username
+                <input type="text" id="newUser" placeholder="user name">
+                <button data-type="submit">Submit</button>
+            </div>
+
+            <!--Submission form for suggestions-->
+            <div>
+                <form method="GET" action="form.html">
+                    <input value="username" type="text" placeholder="username">
+                    <input value="childs-name" type="text" placeholder="childs-name">
+                    <input value="parents email" type="email" type="email"
+                        placeholder="parents email (with holders permission)">
+                    <input value="suggestion-box" type="text" placeholder="Put your suggestions here">
+                    <button data-type="submit">Submission Form</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <!--script links to font awesome and javascript-->
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/f26ba66020.js" crossorigin="anonymous"></script>
 </body>

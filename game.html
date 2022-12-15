@@ -38,10 +38,12 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+
     <title>Paw Patrol Kids Quiz</title>
 </head>
 
 <body>
+
     <!--navigation links via icons to home, audio and menu list-->
     <nav>
         <a href="index.html"><i class="fa-solid fa-igloo"></i></a>
@@ -49,17 +51,20 @@
         <a><i class="fa-regular fa-rectangle-list"></i></a>
     </nav>
 
-    <div>
-        <form method="GET" action="back-form.html">
-            <p>kids name </p>
-            <p>username</p>
-            <p>Parent email (with permission)</p>
-            <p>Suggestion box</p>
-            <button><i>Let's Go!</i></button>
-        </form>
-        <a href="index.html"><button>Home</button></a>
+    <div>questions and answers
+        <div>q
+            <span id="question"></span>
+        </div>
+        <div>a
+            <span type="radio" id="answer1">answer1</span>
+            <span type="radio" id="answer2">answer2</span>
+            <input type="submit" id="my-answer">
+        </div>
     </div>
-
+    <div>tally zone
+        <span id="correct">correct</span>
+        <span id="incorrect">incorrect</span>
+    </div>
 
     <!--script links to font awesome and javascript-->
     <script src="assets/js/script.js"></script>
