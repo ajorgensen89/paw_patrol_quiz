@@ -43,8 +43,8 @@
 </head>
 
 <body>
-    <div class="game-border">
-        <div>
+    <div class="game-border-first">
+        <div class="game-border-second">
             <!--navigation links via icons to home icon and dropdown menu list of anchors to all other pages-->
             <nav>
                 <a href="index.html" class="navigation1">HOME</a>
@@ -69,7 +69,7 @@
                                 <a href="form.html">
                                     <li>Form</li>
                                 </a>
-                               
+
                             </ul>
                         </details>
                     </button>
@@ -80,13 +80,21 @@
         <div>
             <!--Submission form to include username, parents email and suggestion box-->
             <form method="GET" action="form.html">
-                <label value="username" for="username">Username</label>
-                <input type="text" placeholder="username" id="username">
-                <label value="parents email" for="email"></label>
-                <input type="email" placeholder="parents email" id="email">
-                <label value="suggestion-box" for="suggestion"></label>
-                <input type="text" placeholder="Put your suggestion here" id="suggestion">
-                <button data-type="submit" type="submit">Submission Form</button>
+                <p><h4>Any Suggestions...?</h4>
+                    <p>Hope you had fun playing this quiz about Paw Patrol!</p>
+                    <p>
+                    <label value="username" for="username">Username:</label>
+                    <input type="text" placeholder="username" id="username">
+                </p>
+                <p>
+                    <label value="parents email" for="email">Email:</label>
+                    <input type="email" placeholder="parents email" id="email">
+                </p>
+                <p>
+                    <label value="suggestion-box" for="suggestion">Suggestion:</label>
+                    <input type="text" placeholder="Put your suggestion here" id="suggestion">
+                </p>
+                <a href="back-form.html"><button data-type="submit" type="submit">Submission Form</button></a>
             </form>
         </div>
     </div>
