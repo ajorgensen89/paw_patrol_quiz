@@ -1,9 +1,70 @@
 body {
-    color: aquamarine;
-    background-color: black;
-    font-family: 'sen', 'sans-serif';
-}
-h1 {
-    color: rgb(193, 160, 223);
+    background-color: rgb(74, 222, 172);
+    color: black;
+    font-family: 'Luckiest Guy', 'sans-serif';
+    
+    text-align: center;
 }
 
+h1 {
+    font-weight: bold;
+    color: rgb(232, 156, 15);
+    font-size: 60px;
+    font-family: 'Gloria hallelujah', 'sans-serif';
+}
+
+details {
+    width: 50px;
+    height: 150px;
+    list-style-type: none;
+    text-decoration: none;
+    appearance: none;
+    overflow: hidden;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+.game-border {
+    background-color: rgb(201, 177, 223);
+    width: 90%;
+    height: 90%;
+    margin: 5% auto 5% auto;
+    border: 10px solid black;
+    /* box-sizing: border-box; */
+    padding: 0 1% 0 1%;
+
+}
+
+.navigation1 {
+    float: left;
+}
+
+.navigation2 {
+    float: right;
+}
+
+.button-border {
+    text-decoration: none;
+    border: none;
+    /* background-color: rgb(201, 177, 223); */
+}
+
+.introduction {
+    line-height: 50px;
+}
+
+
+
+
+/* media query*/
+
+@media screen and (max-width: 690px) {
+    h1 {
+        color: rgb(232, 156, 15);
+        font-size: 40px;
+    }
+
+}

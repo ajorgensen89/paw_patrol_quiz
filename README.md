@@ -28,6 +28,8 @@ HTML, CSS and JavaScript has been used together for this project to produce a mu
 [Favicon Icon](https://www.favicon-generator.org/)<br>
 One of the characters in Paw Patrol is Everest. I used her colours throughout the website and for the favicon icon on the website after using the generator on the picture file. 
 
+[Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_get_started.asp)
+
 ### Credits
 
 * Fonts from [Google Fonts](https://fonts.google.com/)

@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap links sourced from w3 school. See in Credits in README.md file. Positioned at the top to help negate overriding
+    Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
     <!--link to CSS, rules, level, game, back-form, scores and form files-->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="submission-form" href="form.html">
@@ -42,40 +52,66 @@
 </head>
 
 <body>
-    <div>
-        <header>
-            <h1>Paw Patrol Kids Quiz</h1>
-        </header>
-        <!--navigation links via icons to home, audio and menu list-->
-        <nav>
-            <a href="index.html"><i class="fa-solid fa-igloo"></i></a>
-            <a href="" id="audio"><i class="fa-solid fa-play" class="fa-solid fa-pause"></i></a>
-            <a href=""><i class="fa-regular fa-rectangle-list"></i></a>
-        </nav>
-
-        <div>game board
-            <!--create username-->
-            <div>username
-                <input type="text" id="newUser" placeholder="user name" id="username">
-                <a href="levels.html"><button data-type="submit">Submit</button></a>
-            </div>
-
-            <!--Submission form for suggestions-->
+    <div class="game-border">
+        <div>
+            <!--navigation links via icons to home icon and dropdown menu list of anchors to all other pages-->
+            <nav>
+                <a href="index.html" class="navigation1">HOME</a>
+                <div class="navigation2">
+                    <button class="button-border">
+                        <details>
+                            <summary>MENU
+                            </summary>
+                            <ul class="navigation2">
+                                <a href="rules.html">
+                                    <li>Rules</li>
+                                </a>
+                                <a href="levels.html">
+                                    <li>Levels</li>
+                                </a>
+                                <a href="game.html">
+                                    <li>Enter a game</li>
+                                </a>
+                                <a href="score.html">
+                                    <li>Score</li>
+                                </a>
+                                <a href="form.html">
+                                    <li>Form</li>
+                                </a>
+                                
+                            </ul>
+                        </details>
+                    </button>
+                </div>
+            </nav>
+            <!--quiz name-->
             <div>
-                <form method="GET" action="form.html">
-                    <input value="username" type="text" placeholder="username">
-                    <input value="childs-name" type="text" placeholder="childs-name">
-                    <input value="parents email" type="email" type="email"
-                        placeholder="parents email (with holders permission)">
-                    <input value="suggestion-box" type="text" placeholder="Put your suggestions here">
-                    <button data-type="submit">Submission Form</button>
-                </form>
+                <header>
+                    <h1>Paw Patrol Kids Quiz</h1>
+                </header>
             </div>
+        </div>
+
+        <div class="introduction">
+            <p>Welcome to the Quiz. Fancy putting your knowledge to the test?<br>
+                Have a quick look at the rules first and then create a username to enter the game!<br>
+                Find the rules in the Menu to the right. Get an adult to help you with this if you need!</p>
+            <!--create username-->
+            <div>
+                <p>
+                    <h2>Create Username</h2>
+                </p>
+                <p><input type="text" id="newUser" placeholder="user name" id="username"></p>
+                <p><a href="levels.html"><button data-type="submit">Submit</button></a></p>
+            </div>
+
+
         </div>
     </div>
     <!--script links to font awesome and javascript-->
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/f26ba66020.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

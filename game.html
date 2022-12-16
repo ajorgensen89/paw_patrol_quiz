@@ -13,6 +13,7 @@
     <link rel="levels-of-game" href="levels.html">
     <link rel="homepage" href="index.html">
     <link rel="scoring" href="score.html">
+    <link rel="play-game-level-selected" href="game.html">
     <!--links to google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,28 +44,58 @@
 </head>
 
 <body>
+    <div class="game-border">
+        <div>
+            <!--navigation links via icons to home icon and dropdown menu list of anchors to all other pages-->
+            <nav>
+                <a href="index.html" class="navigation1">HOME</a>
+                <div class="navigation2">
+                    <button class="button-border">
+                        <details>
+                            <summary>MENU
+                            </summary>
+                            <ul class="navigation2">
+                                <a href="rules.html">
+                                    <li>Rules</li>
+                                </a>
+                                <a href="levels.html">
+                                    <li>Levels</li>
+                                </a>
+                                <a href="game.html">
+                                    <li>Enter a game</li>
+                                </a>
+                                <a href="score.html">
+                                    <li>Score</li>
+                                </a>
+                                <a href="form.html">
+                                    <li>Form</li>
+                                </a>
+                                
+                            </ul>
+                        </details>
+                    </button>
+                </div>
+            </nav>
 
-    <!--navigation links via icons to home, audio and menu list-->
-    <nav>
-        <a href="index.html"><i class="fa-solid fa-igloo"></i></a>
-        <a><i class="fa-solid fa-play" class="fa-solid fa-pause"></i></a>
-        <a><i class="fa-regular fa-rectangle-list"></i></a>
-    </nav>
-
-    <div>questions and answers
-        <div>q
-            <span id="question"></span>
         </div>
-        <div>a
-            <span type="radio" id="answer1">answer1</span>
-            <span type="radio" id="answer2">answer2</span>
-            <input type="submit" id="my-answer">
+        <div>questions and answers
+            <div>
+                <span id="question">question</span>
+            </div>
+            <div>
+                <button type="radio" id="answer1">1</button>
+                <button type="radio" id="answer2">2</button>
+                <button type="radio" id="answer3">3</button>
+                <input type="submit" id="my-answer">
+            </div>
+        </div>
+        <div>tally zone
+            <span id="correct">correct:<p>0</p></span>
+            <span id="incorrect">incorrect:<p>0</p></span>
         </div>
     </div>
-    <div>tally zone
-        <span id="correct">correct</span>
-        <span id="incorrect">incorrect</span>
-    </div>
+
+
 
     <!--script links to font awesome and javascript-->
     <script src="assets/js/script.js"></script>
