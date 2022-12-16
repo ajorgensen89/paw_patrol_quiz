@@ -37,3 +37,10 @@ One of the characters in Paw Patrol is Everest. I used her colours throughout th
 * Wireframe from [Balsamiq](https://balsamiq.com/)
 * [Favicon Icon](https://www.favicon-generator.org/) generator wesbite
 * Favicon [image](https://www.bing.com/images/search?view=detailV2&ccid=%2BJyjEgf8&id=1C9235A2E43F8DACE3ABFA5ECA46B0C6EA59D9CF&thid=OIP.-JyjEgf8_qN5SGjxre2cngHaIB&mediaurl=https%3A%2F%2Fwww.vippng.com%2Fpng%2Fdetail%2F223-2230436_stickerbygoodcat30-everest-pawpatrol-everestpawpatrol-paw-patrol-everest.png&exph=996&expw=920&q=everest+paw+patrol&simid=608045310985327084&form=IRPRST&ck=D75FA36506DA9C1F967833C435131981&selectedindex=5&ajaxhist=0&ajaxserp=0&vt=0&sim=11&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.f89ca31207fcfea3794868f1aded9c9e%3Frik%3Dz9lZ6sawRspe%252bg%26pid%3DImgRaw%26r%3D0) source
+
+Issue
+![Microsoft Inspect Example](assets/images-readme/Inspectpadding.png)
+
+Fix
+![Microsoft insecpt Example](assets/images-readme/Inspectpaddingfix.png)
+

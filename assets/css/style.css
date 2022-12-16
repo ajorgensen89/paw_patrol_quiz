@@ -5,15 +5,22 @@ body {
     font-family: 'Luckiest Guy', 'sans-serif';
     text-align: center;
 }
-
+p {
+    margin: 30px 0;
+}
 h1 {
-    color: rgb(228, 120, 6);
     font-size: 60px;
-    font-family: 'Gloria hallelujah', 'sans-serif';
+    margin: 0;
 }
-h2, h3, h4, h5 {
+
+h2,
+h3,
+h4,
+h5 {
     font-size: 40px;
+    margin: 0 auto;
 }
+
 details {
     width: 50px;
     height: 150px;
@@ -23,16 +30,24 @@ details {
     overflow: hidden;
 
 }
+
 /*Logo*/
 img {
     height: 50px;
     width: 50px;
 }
+
 /*Take away list and anchor decorations (apart from the dropdown default menu arrow)*/
-li, a {
+li,
+a {
     list-style-type: none;
     text-decoration: none;
 }
+
+ol {
+    padding-left: 0;
+}
+
 /*Input and button box CSS*/
 .style-username-box {
     text-align: center;
@@ -48,8 +63,10 @@ li, a {
     border: 4px solid black;
 }
 
-.button-padding {
+.button-display {
     display: inline-block;
+    height: 200px;
+    width: 100px;
 }
 
 /*games board*/
@@ -58,10 +75,10 @@ li, a {
     background-color: rgb(201, 177, 223);
     width: 90%;
     height: 90%;
-    margin: 5% auto 5% auto;
+    margin: auto auto 1% auto;
     border: 10px solid black;
     box-sizing: border-box;
-    padding: 0 1% 0 1%;
+    padding: 0 1% 1% 1%;
 
 }
 
@@ -72,13 +89,15 @@ li, a {
 
 .navigation2 {
     float: right;
+    margin-top: 0;
+    width: 130px;
 }
+
 a:hover {
     color: rgb(228, 120, 6);
 }
-.game-border-second {
 
-}
+.game-border-second {}
 
 .tally-zone {
     width: 90%;
@@ -95,9 +114,8 @@ a:hover {
 }
 
 .introduction {
-    line-height: 50px;
+    line-height: 40px;
 }
-
 
 
 
