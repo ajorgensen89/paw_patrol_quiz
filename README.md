@@ -44,3 +44,5 @@ Issue
 Fix
 ![Microsoft insecpt Example](assets/images-readme/Inspectpaddingfix.png)
 
+help with quiz
+https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/

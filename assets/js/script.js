@@ -1,128 +1,173 @@
-console.log("connected");
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     let button = document.getElementsByClassName("buttons");
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "submit") {
+                console.log("yes")
+                iterate(id);
+            } else {
+                let  = this.getAttribute("data-type");
+                console.log("yesagain")
+                    ();
+            }
+        });
+    }
+});
+/**setting question array */
+let numberOfQuestions = [{
+        id: 0,
+        question: "What is naughty Majors name in Paw Patrol who cases problems for the Paw Patrol gang?",
+        answers: [{
+                choice: "Major Goodway",
+                isCorrect: false
+            },
+            {
+                choice: "Major Humdinger",
+                isCorrect: true
+            },
+            {
+                choice: "Major Johnson",
+                isCorrect: false
+            },
+        ]
 
-//     for (let button of buttons) {
-//         playGame.addEventListener("click", function () {
-//             if (this.getAttribute("data-type") === "easy") {
-//                 console.log("working");
-//                 findOutAnswer();
-//             } else if (this.getAttribute("data-type") === "medium") {
-//                 ;
-//                 console.log("working also");
-//                 gameLevel(quizGame);
-//             }
-//         });
-//         gameLevel(quizGame);
-//     }
-    // so enter can be pressed to submit answer instead of moving mouse and clicking.
-    // document.getElementById("my-answer").addEventListener("keydown", function (event) {
-    //     if (event.key === "Enter") {
-    //         findOutAnswer();
-    //     }
-    // });
-// });
+    },
+    {
+        id: 1,
+        question: "What name is given to the puppy who wears a blue police unifrom in Paw Patrol?",
+        answers: [{
+                choice: "Chase",
+                isCorrect: true
+            },
+            {
+                choice: "Rumble",
+                isCorrect: false
+            },
+            {
+                choice: "Tracker",
+                isCorrect: false
+            },
+        ],
 
-// let userName = document.getElementById('username');
-// userName = [];
-// userName.push(`${userName}`);
+    },
+    {
+        id: 2,
+        question: "What is the name of Major Goodways pet chicken?",
+        answers: [{
+                choice: "Wally",
+                isCorrect: false
+            },
+            {
+                choice: "Chickaletta",
+                iscorrect: true
+            },
+            {
+                choice: "Ryder",
+                isCorrect: false
+            },
+        ]
 
-// let numberOfQuestions = [
-//     {
-//         question: "What is naughty Majors name in Paw Patrol who cases problems for the Paw Patrol gang?",
-//         answers: {
-//             a: "Major Goodway",
-//             b: "Major Humdinger",
-//             c: "Major Johnson"
-//         },
-//         correctAnswer: "b"
-//     },
-//     {
-//         question: "What name is given to the puppy who wears a blue police unifrom in Paw Patrol?",
-//         answers: {
-//             a: "Chase",
-//             b: "Rumble",
-//             c: "Tracker"
-//         },
-//         correctAnswer: "a"
-//     },
-//     {
-//         question: "What is the name of Major Goodways pet chicken?",
-//         answers: {
-//             a: "Wally",
-//             b: "Chickaletta",
-//             c: "Ryder"
-//         },
-//         correctAnswer: "b"
-//     },
-//     {
-//         question: "What name is given to the puppy who wears a blue police unifrom?",
-//         answers: {
-//             a: "Chase",
-//             b: "Rumble",
-//             c: "Tracker"
-//         },
-//         correctAnswer: "a"
-//     },
-//     {
-//         question: "What is?",
-//         answers: {
-//             a: "Major Goodway",
-//             b: "Major Humdinger",
-//             c: "Major Johnson"
-//         },
-//         correctAnswer: "b"
-//     },
-//     {
-//         question: "What name is given to the puppy who wears a pink helicopter pilot uniform?",
-//         answers: {
-//             a: "Rocky",
-//             b: "Everest",
-//             c: "Sky"
-//         },
-//         correctAnswer: "a"
-//     },
-// ];
+    },
+    // {
+    //     question: "What name is given to the puppy who wears a blue police unifrom?",
+    //     answers: {
+    //         a: "Chase",
+    //         b: "Rumble",
+    //         c: "Tracker"
+    //     },
 
-// // let quizQuestion = document.getElementById('question').innerText;
-// // let quizSolution = document.getElementById('answer1', 'answer2', 'answer3').innerText;
-// // let quizSubmit = getElementById('submit').innerText;
+    // },
+    // {
+    //     question: "What is?",
+    //     answers: {
+    //         a: "Major Goodway",
+    //         b: "Major Humdinger",
+    //         c: "Major Johnson"
+    //     },
 
-// // gameLevel(quizQuestion, quizSolution, quizSubmit);
+    // },
+    // {
+    //     question: "What name is given to the puppy who wears a pink helicopter pilot uniform?",
+    //     answers: {
+    //         a: "Rocky",
+    //         b: "Everest",
+    //         c: "Sky"
+    //     },
 
-// // let easyG = Math.random(numberOfQuestions) * 1;
-// // let mediumG = Math.random(numberOfQuestions) * 2;
-// // let hardG = Math.random(numberOfQuestions) * 3;
+    // },
+];
+/** setting start of quiz to run */
+let start = true;
+/** setting function to run quiz via iterating the ID for my questions. */
+function iterate(id) {
+    /** getting the window to show the result by class in div*/
+    let outcome = document.getElementsByClassName("outcome");
+    outcome[0].innerText = "";
+    /** getting question from array*/
+    let question = document.getElementById("question");
+    /**getting inner text of the question in my array */
+    question.innerText = numberOfQuestions[id].question;
+    /**Getting my 3 different answer choice boxs from html */
+    let answer1 = document.getElementById("answer1");
+    let answer2 = document.getElementById("answer2");
+    let answer3 = document.getElementById("answer3");
+    /** getting innertext of my answer choices from my answer arrays */
+    answer1.innerText = numberOfQuestions[id].answers[0].choice;
+    answer2.innerText = numberOfQuestions[id].answers[1].choice;
+    answer3.innerText = numberOfQuestions[id].answers[2].choice;
+    /** idenifying the correct option from the answer in the array */
+    answer1.value = numberOfQuestions[id].answers[0].isCorrect;
+    answer2.value = numberOfQuestions[id].answers[1].isCorrect;
+    answer3.value = numberOfQuestions[id].answers[2].isCorrect;
 
-// // function quizGame(gameLevel) {
+    /** Add event listeners to the 3 answers */
+    let confirmed = "";
+    answer1.addEventListener("click", () => {
+        answer1.style.backgroundColor = "green";
+        answer2.style.backgroundColor = "red";
+        answer3.style.backgroundColor = "red";
+        confirmed = answer1.value;
+    });
+    answer2.addEventListener("click", () => {
+        answer1.style.backgroundColor = "red";
+        answer2.style.backgroundColor = "green";
+        answer3.style.backgroundColor = "red";
+        confirmed = answer2.value;
+    });
+    answer3.addEventListener("click", () => {
+        answer1.style.backgroundColor = "red";
+        answer2.style.backgroundColor = "red";
+        answer3.style.backgroundColor = "green";
+        confirmed = answer3.value;
+    });
+/**get html element check gtom html */
+    let check = document.getElementsByClassName("check");
+/**comfirm the view of correct or incorrect choices for user */
+    check[0].addEventListener("click", () => {
+        if (confirmed === "true") {
+            outcome[0].innerHTML = "True";
+            outcome[0].style.color = "green";
+        } else {
+            outcome[0].innerHTML = "False";
+            outcome[0].style.color = "red";
+        }
+    })
+    /**start the quiz */
+    if (start) {
+        iterate("0");
+    }
 
-// //     if (gameLevel === "easy") {
-// //         easyG();
-// //     } else if (gameLevel === "medium") {
-// //         mediumG();
-// //     } else if (gameLevel === "hard") {
-// //         hardG();
-// //     }
-// // };
+    /**next question button */ 
+    let next = document.getElementsByClassName("next")[0];
+    let id = 0;
 
-// // function findOutAnswer() {
-// //     for (numberOfQuestions = 0; numberOfQuestions.length < 1; ) {
-// //         easyG();
-// //         console.log("game");
-// //     };
-// // };
-
-// // function correctAnswerScore() {
-
-// // }
-
-// // function incorrectAnswerScore() {
-
-// // }
-// // var quizContainer = document.getElementById('quiz');
-// // var resultsContainer = document.getElementById('results');
-// // var submitButton = document.getElementById('submit');
-
-// // generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-
+    next.addEventListener("click", () => {
+        start = false;
+        if (id < 2) {
+            id++;
+            iterate(id);
+            console.log(id);
+        }
+    });
+}
