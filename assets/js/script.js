@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
                 console.log("yes");
                 iterate(questionId);
-            }
-            else {
-                let  = this.getAttribute("data-type");
+            } else {
+                let = this.getAttribute("data-type");
                 iterate(questionId);
                 console.log("yesagain")
                     ();
@@ -116,11 +115,11 @@ function iterate(id) {
     /** getting question from array*/
     let question = document.getElementById("question");
     /**getting inner text of the question in my array */
-                                                         /**NEED HELP WITH THIS LINE 124 AS CAN NOT CREATE LOOP CORRECTLY KEEPS MAKING IT INFINITE.
-                                                          * If wont iterate correctly through my questions.
-                                                          */
+    /**NEED HELP WITH THIS LINE 124 AS CAN NOT CREATE LOOP CORRECTLY KEEPS MAKING IT INFINITE.
+     * If wont iterate correctly through my questions.
+     */
     question.textContent = numberOfQuestions[id].question;
-    
+
     /**Getting my 3 different answer choice boxs from html */
     let answer1 = document.getElementById("answer1");
     let answer2 = document.getElementById("answer2");
@@ -135,6 +134,9 @@ function iterate(id) {
     answer2.value = numberOfQuestions[id].answers[1].isCorrect;
     answer3.value = numberOfQuestions[id].answers[2].isCorrect;
     console.log("3");
+
+    /** COMMENTED THIS OUT FOR NOW - WAS WOKRING BUT INCORRECTLY - TRYING ANOTHER METHOD WITH FUCNTION AT THE BOTTM BUT UNSURE WHWERE TO LINK TI IN NOW. */
+
     /** Add event listeners to the 3 answers */
     let confirmed = "";
     answer1.addEventListener("click", () => {
@@ -171,7 +173,7 @@ function iterate(id) {
              outcome[0].style.color = "red";
          }
      })
-    console.log("5");
+    // console.log("5");
     /**start the quiz */
     /*    if (start) {
             console.log("6");
@@ -186,3 +188,27 @@ function iterate(id) {
         iterate(questionId);
     });
 }
+
+function incrementScore() {
+    let correct = document.getElementById("correct").innerText;
+    document.getElementById("correct").innerText = ++correct;
+}
+/**
+ * Gets the current tally of incorrect answers from the DOM and increments it by 1
+ */
+function incrementWrongAnswer() {
+    let incorrect = document.getElementById("incorrect").innerText;
+    document.getElementById("incorrect").innerText = ++incorrect
+}
+
+    let userAnswer = isCorrect = true;
+    userAnswer.addEventListener("click", () => {
+    if (isCorrect === userAnswer) {
+        console.log("8");
+        outcome[0].style.color = "green";
+        incrementScore();
+    } else(isCorrect != userAnswer); {
+        console.log("9");
+        outcome[0].style.color = "red";
+        incrementWrongAnswer();
+    });
