@@ -1,5 +1,4 @@
 let questionId = 0;
-let isCorrect = "";
 // let next = document.getElementsByClassName("next")[0];
 // next.addEventListener("click", () => {
 //     questionId++;
@@ -15,17 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
                 console.log("yesilistened");
                 iterate(questionId);
-            } else if (this.getAttribute("data-type") === "next") {
+            } else (this.getAttribute("data-type") === "next"); {
                 event.preventDefault();
                 questionId++;
                 iterate(questionId);
                 console.log("oknext");
-            } else if (this.getAttribute("data-type") === "submit"); {
-                event.preventDefault();
-                checkAnswer();
+            } 
+            // else if (this.getAttribute("data-type") === "submit"); {
 
-                console.log("checkanswer");
-            };
+            //     checkAnswer();
+            //     console.log("checkanswer");
+            // };
         });
     }
 });
@@ -146,7 +145,7 @@ function iterate(questionId) {
     /** getting the window to show the result by class in div*/
     console.log("1");
     let outcome = document.getElementsByClassName("outcome");
-    outcome[0].textContent = "";
+    outcome[0].textContent = "Good Luck!";
     /** getting question from array*/
     let questions = document.getElementById("questionbay");
     /**getting inner text of the question in my array */
@@ -171,45 +170,48 @@ function iterate(questionId) {
     answer3.value = numberOfQuestions[questionId].answers[2].isCorrect;
     console.log("3");
 }
+
 /**get html element check from html */
 /** Add event listeners to the 3 answers within checkAnswer function*/
-function checkAnswer() {
-    var confirmed = "";
-    answer1.addEventListener("click", () => {
-        answer1.style.backgroundColor = "green";
-            answer2.style.backgroundColor = "red";
-            answer3.style.backgroundColor = "red";
-            confirmed = answer1.value;
-    });
-    answer2.addEventListener("click", () => {
-        answer1.style.backgroundColor = "red";
-        answer2.style.backgroundColor = "green";
-        answer3.style.backgroundColor = "red";
-        confirmed = answer2.value;
-    });
-    answer3.addEventListener("click", () => {
-        answer1.style.backgroundColor = "red";
-        answer2.style.backgroundColor = "red";
-        answer3.style.backgroundColor = "green";
-        confirmed = answer3.value;
-        console.log("4");
-    });
-        let checks = document.getElementsByClassName("check");
+let confirm = "";
+answer1.addEventListener("click", () => {
+    answer1.style.backgroundColor = "green";
+    answer2.style.backgroundColor = "red";
+    answer3.style.backgroundColor = "red";
+    confirm = answer1.value;
+    console.log("answer1 clicked correct")
+});
+answer2.addEventListener("click", () => {
+    answer1.style.backgroundColor = "red";
+    answer2.style.backgroundColor = "green";
+    answer3.style.backgroundColor = "red";
+    confirm = answer2.value;
+    console.log("answer2 clicked correct")
+});
+answer3.addEventListener("click", () => {
+    answer1.style.backgroundColor = "red";
+    answer2.style.backgroundColor = "red";
+    answer3.style.backgroundColor = "green";
+    confirm = answer2.value;
+    console.log("answer3 clicked correct")
+});
+
+// function checkAnswer() {
+    let check = document.getElementsByClassName("check");
     /**comfirm the view of correct or incorrect choices for user */
-    check[0].addEventListener("click", function () {
-        if (confirmed = "true") {
+    check[0].addEventListener("click", () => {
+        if (confirm == "true") {
             outcome[0].textContent = "True";
-            outcome[0].style.color = "green";
+            outcome[0].style.color = "blue";
             incrementScore();
             console.log("true n G correct");
-        } else (confirmed = "false"); {
-            outcome[0].textContent = "False";
-            outcome[0].style.color = "red";
+        } else {
+            outcome[0].textContent = "Ffalse";
+            outcome[0].style.color = "purple";
             incrementWrongAnswer();
             console.log("false n R incorrect");
         }
     });
-};
 // };
 /**
  * Gets the current tally of correct answers and increments it by 1
