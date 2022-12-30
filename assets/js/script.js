@@ -1,29 +1,38 @@
-var questionId = 0;
+let questionId = 0;
+let isCorrect = "";
+// let next = document.getElementsByClassName("next")[0];
+// next.addEventListener("click", () => {
+//     questionId++;
+//     iterate(questionId);
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
         button.addEventListener("click", function (event) {
-            if (this.getAttribute("data-type") === "submit") {
+            if (this.getAttribute("data-type") === "start") {
                 event.preventDefault();
-                console.log("yes");
+                console.log("yesilistened");
                 iterate(questionId);
-            } else {
-                let = this.getAttribute("data-type");
+            } else if (this.getAttribute("data-type") === "next") {
+                event.preventDefault();
+                questionId++;
                 iterate(questionId);
-                console.log("yesagain")
-                    ();
-            }
-            iterate(questionId);
-            console.log("ok");
+                console.log("oknext");
+            } else if (this.getAttribute("data-type") === "submit"); {
+                event.preventDefault();
+                checkAnswer();
+
+                console.log("checkanswer");
+            };
         });
     }
 });
 /**setting question array */
 
 let numberOfQuestions = [{
-        id: 0,
+        questionId: 0,
         question: "What is naughty Majors name in Paw Patrol who causes problems for the Paw Patrol gang?",
         answers: [{
                 choice: "Major Goodway",
@@ -41,7 +50,7 @@ let numberOfQuestions = [{
 
     },
     {
-        id: 1,
+        questionId: 1,
         question: "What name is given to the puppy who wears a blue police unifrom in Paw Patrol?",
         answers: [{
                 choice: "Chase",
@@ -59,7 +68,7 @@ let numberOfQuestions = [{
 
     },
     {
-        id: 2,
+        questionId: 2,
         question: "What is the name of Major Goodways pet chicken?",
         answers: [{
                 choice: "Wally",
@@ -76,74 +85,103 @@ let numberOfQuestions = [{
         ]
 
     },
-    // {
-    //     question: "What name is given to the puppy who wears a blue police unifrom?",
-    //     answers: {
-    //         a: "Chase",
-    //         b: "Rumble",
-    //         c: "Tracker"
-    //     },
+    {
+        questionId: 3,
+        question: "What name is given to the puppy who wears a blue police unifrom?",
+        answers: [{
+                choice: "Chase",
+                isCorrect: true
+            },
+            {
+                choice: "Rumble",
+                isCorrect: false
+            },
+            {
+                choice: "Tracker",
+                isCorrect: false
+            },
 
-    // },
-    // {
-    //     question: "What is?",
-    //     answers: {
-    //         a: "Major Goodway",
-    //         b: "Major Humdinger",
-    //         c: "Major Johnson"
-    //     },
+        ]
 
-    // },
-    // {
-    //     question: "What name is given to the puppy who wears a pink helicopter pilot uniform?",
-    //     answers: {
-    //         a: "Rocky",
-    //         b: "Everest",
-    //         c: "Sky"
-    //     },
+    },
+    {
+        questionId: 4,
+        question: "What is the name of the Major with Grandchildren called Callie and Ben?",
+        answers: [{
+                choice: "Major Johnson",
+                isCorrect: false
+            },
+            {
+                choice: "Major Humdinger",
+                isCorrect: false
+            },
+            {
+                choice: "Major Goodway",
+                isCorrect: true
+            },
+        ]
 
-    // },
+    },
+    {
+        questionId: 5,
+        question: "What name is given to the puppy who wears a pink helicopter pilot uniform?",
+        answers: [{
+                choice: "Rocky",
+                isCorrect: false
+            },
+            {
+                choice: "Everest",
+                isCorrect: false
+            },
+            {
+                choice: "Skye",
+                isCorrect: true
+            },
+        ]
+    },
 ];
-/** setting start of quiz to run */
-// let start = true;
+
 /** setting function to run quiz via iterating the ID for my questions. */
-function iterate(id) {
+function iterate(questionId) {
     /** getting the window to show the result by class in div*/
     console.log("1");
     let outcome = document.getElementsByClassName("outcome");
     outcome[0].textContent = "";
     /** getting question from array*/
-    let question = document.getElementById("question");
+    let questions = document.getElementById("questionbay");
     /**getting inner text of the question in my array */
-    /**NEED HELP WITH THIS LINE 124 AS CAN NOT CREATE LOOP CORRECTLY KEEPS MAKING IT INFINITE.
-     * If wont iterate correctly through my questions.
-     */
-    question.textContent = numberOfQuestions[id].question;
+    questions.textContent = numberOfQuestions[questionId].question;
 
+    // for (let question = 0; question < question.length; question++){
+    //     console.log(questions[questionId]);
+    //     console.log("questionlogged")
+    // }
     /**Getting my 3 different answer choice boxs from html */
     let answer1 = document.getElementById("answer1");
     let answer2 = document.getElementById("answer2");
     let answer3 = document.getElementById("answer3");
     console.log("2");
     /** getting innertext of my answer choices from my answer arrays */
-    answer1.textContent = numberOfQuestions[id].answers[0].choice;
-    answer2.textContent = numberOfQuestions[id].answers[1].choice;
-    answer3.textContent = numberOfQuestions[id].answers[2].choice;
+    answer1.textContent = numberOfQuestions[questionId].answers[0].choice;
+    answer2.textContent = numberOfQuestions[questionId].answers[1].choice;
+    answer3.textContent = numberOfQuestions[questionId].answers[2].choice;
     /** idenifying the correct option from the answer in the array */
-    answer1.value = numberOfQuestions[id].answers[0].isCorrect;
-    answer2.value = numberOfQuestions[id].answers[1].isCorrect;
-    answer3.value = numberOfQuestions[id].answers[2].isCorrect;
+    answer1.value = numberOfQuestions[questionId].answers[0].isCorrect;
+    answer2.value = numberOfQuestions[questionId].answers[1].isCorrect;
+    answer3.value = numberOfQuestions[questionId].answers[2].isCorrect;
     console.log("3");
+}
+/**get html element check from html */
 
-    /** COMMENTED THIS OUT FOR NOW - WAS WOKRING BUT INCORRECTLY - TRYING ANOTHER METHOD WITH FUCNTION AT THE BOTTM BUT UNSURE WHWERE TO LINK TI IN NOW. */
+function checkAnswer() {
 
     /** Add event listeners to the 3 answers */
-    let confirmed = "";
+    var confirmed = "";
     answer1.addEventListener("click", () => {
         answer1.style.backgroundColor = "green";
-        answer2.style.backgroundColor = "red";
-        answer3.style.backgroundColor = "red";
-        confirmed = answer1.value;
+            answer2.style.backgroundColor = "red";
+            answer3.style.backgroundColor = "red";
+            confirmed = answer1.value;
     });
     answer2.addEventListener("click", () => {
         answer1.style.backgroundColor = "red";
@@ -156,59 +194,43 @@ function iterate(id) {
         answer2.style.backgroundColor = "red";
         answer3.style.backgroundColor = "green";
         confirmed = answer3.value;
+        console.log("4");
     });
-    console.log("4");
-    /**get html element check from html */
-    let check = document.getElementsByClassName("check");
-
+    
+    let checks = document.getElementsByClassName("check");
     /**comfirm the view of correct or incorrect choices for user */
-    check[0].addEventListener("click", () => {
-         if (confirmed === "green") {
-            isCorrect = true;
-             outcome[0].textContent = "True";
-             outcome[0].style.color = "green";
-         } else (confirmed === "red"); {
-            isCorrect = false;
-             outcome[0].textContent = "False";
-             outcome[0].style.color = "red";
-         }
-     })
-    // console.log("5");
-    /**start the quiz */
-    /*    if (start) {
-            console.log("6");
-            iterate("0");
-        }*/
+    // for (let check of checks) {
+    check[0].addEventListener("click", function () {
+        if (confirmed = "true") {
+            outcome[0].textContent = "True";
+            outcome[0].style.color = "green";
+            incrementScore();
+            console.log("true n G correct");
+        } else (confirmed = "false"); {
+            outcome[0].textContent = "False";
+            outcome[0].style.color = "red";
+            incrementWrongAnswer();
+            console.log("false n R incorrect");
 
-    /**next question button */
-    let next = document.getElementsByClassName("next")[0];
-    console.log("7");
-    next.addEventListener("click", () => {
-        questionId++;
-        iterate(questionId);
+        }
     });
-}
-
+};
+// };
+/**
+ * Gets the current tally of correct answers and increments it by 1
+ * let functions taken and adjusted from Love-Maths Walkthrough project
+ */
 function incrementScore() {
-    let correct = document.getElementById("correct").innerText;
+    let oldScore = parseInt(document.getElementById("correct").innerText);
     document.getElementById("correct").innerText = ++correct;
+    console.log("6");
 }
 /**
- * Gets the current tally of incorrect answers from the DOM and increments it by 1
+ * Gets the current tally of incorrect answers and increments it by 1
+ * let functions taken and adjusted from Love-Maths Walkthrough project
  */
 function incrementWrongAnswer() {
-    let incorrect = document.getElementById("incorrect").innerText;
-    document.getElementById("incorrect").innerText = ++incorrect
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++incorrect;
+    console.log("7");
 }
-
-    let userAnswer = isCorrect = true;
-    userAnswer.addEventListener("click", () => {
-    if (isCorrect === userAnswer) {
-        console.log("8");
-        outcome[0].style.color = "green";
-        incrementScore();
-    } else(isCorrect != userAnswer); {
-        console.log("9");
-        outcome[0].style.color = "red";
-        incrementWrongAnswer();
-    });
