@@ -172,10 +172,8 @@ function iterate(questionId) {
     console.log("3");
 }
 /**get html element check from html */
-
+/** Add event listeners to the 3 answers within checkAnswer function*/
 function checkAnswer() {
-
-    /** Add event listeners to the 3 answers */
     var confirmed = "";
     answer1.addEventListener("click", () => {
         answer1.style.backgroundColor = "green";
@@ -196,10 +194,8 @@ function checkAnswer() {
         confirmed = answer3.value;
         console.log("4");
     });
-    
-    let checks = document.getElementsByClassName("check");
+        let checks = document.getElementsByClassName("check");
     /**comfirm the view of correct or incorrect choices for user */
-    // for (let check of checks) {
     check[0].addEventListener("click", function () {
         if (confirmed = "true") {
             outcome[0].textContent = "True";
@@ -211,7 +207,6 @@ function checkAnswer() {
             outcome[0].style.color = "red";
             incrementWrongAnswer();
             console.log("false n R incorrect");
-
         }
     });
 };
