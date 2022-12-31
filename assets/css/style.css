@@ -123,6 +123,12 @@ a:hover {
     border: none;
 }
 
+
+/* Increment score images for correct and incorrect*/
+.x-pup {
+    width: 50px;
+    height: 100px;
+}
 /* media query*/
 
 @media screen and (max-width: 690px) {

@@ -6,6 +6,7 @@ HTML, CSS and JavaScript has been used together for this project to produce a mu
 ***
 ***
 ### Table of Contents.
+
 * [User Experience](#user-experience)
 	- [Wireframe](#wireframe)
 * [Features](#features)
@@ -23,13 +24,46 @@ HTML, CSS and JavaScript has been used together for this project to produce a mu
 * [Clone Website](#clone-website)
 * [Deployment](#deployment)
 * [Technologies](#technologies)
+
+# User Experience
+
 ***
-## Technologies.
+### Wireframe
+
+***
+# Featuresfeatures
+
+***
+### Footer
+
+***
+### Future features
+
+***
+Testing](testing.md)
+
+
+# Design
+
+***
+### Colour Scheme
+
+***
+### Typography
+
+***
+# Clone Website
+
+***
+# Deployment
+
+***
+# Technologies.
 [Favicon Icon](https://www.favicon-generator.org/)<br>
 One of the characters in Paw Patrol is Everest. I used her colours throughout the website and for the favicon icon on the website after using the generator on the picture file. 
 
 [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_get_started.asp)
-
+***
 ### Credits
 
 * Fonts from [Google Fonts](https://fonts.google.com/)
@@ -42,7 +76,21 @@ Issue
 ![Microsoft Inspect Example](assets/images-readme/Inspectpadding.png)
 
 Fix
-![Microsoft insecpt Example](assets/images-readme/Inspectpaddingfix.png)
+![Microsoft Inspect Example](assets/images-readme/Inspectpaddingfix.png)
 
 help with quiz
 https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/
+
+assist with loops
+https://pythontutor.com/visualize.html#mode=edit
+
+Code used for inputing Images to javascript and HTML.
+https://www.moonbooks.org/Articles/How-to-add-an-image-in-a-HTML-page-using-javascript-/#:~:text=How%20to%20add%20an%20image%20in%20a%20HTML,do%20you%20insert%20an%20image%20in%20Javascript%3F%20
+
+
+
+Sad Everest picture for incorrect score
+https://in.pinterest.com/pin/paw-patrol--414683078182219373/
+
+Happy Everest Puppy picture for correct score
+https://cartoongoodies.com/png-images/paw-patrol-png-images/

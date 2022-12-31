@@ -143,16 +143,18 @@ let numberOfQuestions = [{
 function iterate(questionId) {
     /** getting the window to show the result by class in div*/
     console.log("1");
-
     /** getting question from array*/
     let questions = document.getElementById("questionbay");
     /**getting inner text of the question in my array */
     questions.textContent = numberOfQuestions[questionId].question;
-
-    // for (let question = 0; question < question.length; question++){
-    //     console.log(questions[questionId]);
-    //     console.log("questionlogged")
-    // }
+    /**loop questions and stop after 3 questions */
+    for (let questionId = 0; questionId < numberOfQuestions.length; questionId++) {
+        if (questionId <= 3) {
+            console.log("prt")
+        } else {
+            console.log("sd")
+        };
+    };
     /**Getting my 3 different answer choice boxs from html */
     let answer1 = document.getElementById("answer1");
     let answer2 = document.getElementById("answer2");
@@ -169,35 +171,36 @@ function iterate(questionId) {
     console.log("3");
 }
 
-/**get html element check from html */
 let confirm = "";
-    /** Add event listeners to the 3 answers within checkAnswer function*/
-    answer1.addEventListener("click", () => {
-        answer1.style.backgroundColor = "green";
-        answer2.style.backgroundColor = "red";
-        answer3.style.backgroundColor = "red";
-        confirm = answer1.value;
-        console.log("answer1 clicked correct")
-    });
-    answer2.addEventListener("click", () => {
-        answer1.style.backgroundColor = "red";
-        answer2.style.backgroundColor = "green";
-        answer3.style.backgroundColor = "red";
-        confirm = answer2.value;
-        console.log("answer2 clicked correct")
-    });
-    answer3.addEventListener("click", () => {
-        answer1.style.backgroundColor = "red";
-        answer2.style.backgroundColor = "red";
-        answer3.style.backgroundColor = "green";
-        confirm = answer3.value;
-        console.log("answer3 clicked correct")
-    });
+/** Add event listeners to the 3 answers when the corret or incorrect button is clicked*/
+answer1.addEventListener("click", () => {
+    answer1.style.backgroundColor = "green";
+    answer2.style.backgroundColor = "red";
+    answer3.style.backgroundColor = "red";
+    confirm = answer1.value;
+    console.log("answer1 clicked correct")
+});
+answer2.addEventListener("click", () => {
+    answer1.style.backgroundColor = "red";
+    answer2.style.backgroundColor = "green";
+    answer3.style.backgroundColor = "red";
+    confirm = answer2.value;
+    console.log("answer2 clicked correct")
+});
+answer3.addEventListener("click", () => {
+    answer1.style.backgroundColor = "red";
+    answer2.style.backgroundColor = "red";
+    answer3.style.backgroundColor = "green";
+    confirm = answer3.value;
+    console.log("answer3 clicked correct")
+});
 // let check = document.getElementsById("check");
 function checkAnswer() {
+    /** To show the user the outcome of their selected answer */
     let outcome = document.getElementsByClassName("outcome");
     outcome[0].textContent = "";
-    /**comfirm the view of correct or incorrect choices for user */
+    /**Comfirm the view of correct or incorrect choices for user with different text and color to the text */
+    /**get html element check from html */
     // check[0].addEventListener("click", checkAnswer()); {
     if (confirm == "true") {
         outcome[0].textContent = "True";
@@ -210,24 +213,40 @@ function checkAnswer() {
         incrementWrongAnswer();
         console.log("false n R incorrect");
     }
-    
+
 };
 // };
-/**
- * Gets the current tally of correct answers and increments it by 1
- * let functions taken and adjusted from Love-Maths Walkthrough project
- */
+/** Function to increment correct score */
 function incrementScore() {
+    /**Gets the current tally of correct answers and increments it by 1
+     * let functions taken and adjusted from Love-Maths Walkthrough project
+     */
     let oldScore = parseInt(document.getElementById("correct").innerText);
     document.getElementById("correct").innerText = ++oldScore;
+    /** Image input and 'if' statement for correct answer. Show inside element with Id="x1" */
+    let img = document.createElement("img");
+    img.src = "../assets/images/yesPupCP.png";
+    let imageBlock = document.getElementById("x1");
+    if (oldScore = +1) {
+        imageBlock.appendChild(img);
+        console.log("image1")
+    }
     console.log("6");
 }
-/**
- * Gets the current tally of incorrect answers and increments it by 1
- * let functions taken and adjusted from Love-Maths Walkthrough project
- */
+/** Function to increment incorrect score */
 function incrementWrongAnswer() {
+    /**Gets the current tally of incorrect answers and increments it by 1
+     * let functions taken and adjusted from Love-Maths Walkthrough project
+     */
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
     document.getElementById("incorrect").innerText = ++oldScore;
+    /** Image input and 'if' statement for incorrect answer. Show inside element with Id="x2" */
+    let img = document.createElement("img");
+    img.src = "../assets/images/NoPupCP.png";
+    let imageBlock = document.getElementById("x2");
+    if (oldScore = +1) {
+        imageBlock.appendChild(img);
+        console.log("image2")
+    }
     console.log("7");
 }
