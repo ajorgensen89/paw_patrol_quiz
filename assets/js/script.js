@@ -219,7 +219,7 @@ function checkAnswer() {
  */
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("correct").innerText);
-    document.getElementById("correct").innerText = ++correct;
+    document.getElementById("correct").innerText = ++oldScore;
     console.log("6");
 }
 /**
@@ -228,6 +228,6 @@ function incrementScore() {
  */
 function incrementWrongAnswer() {
     let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++incorrect;
+    document.getElementById("incorrect").innerText = ++oldScore;
     console.log("7");
 }
