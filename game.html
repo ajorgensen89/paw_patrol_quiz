@@ -46,14 +46,11 @@
 <body>
     <div class="game-border-first">
         <div class="game-border-second">
-            <!--navigation links via icons to home icon and dropdown menu list of anchors to all other pages-->
+            <!--navigation links via anchors to all other pages-->
             <nav>
                 <a href="index.html" class="navigation1">HOME</a>
                 <div class="navigation2">
-                    <!-- <button class="button-border">
-                        <details>
-                            <summary>MENU
-                            </summary> -->
+                    
                     <ul class="navigation2">
                         <a href="rules.html">
                             <li>Rules</li>
@@ -72,29 +69,32 @@
                         </a>
 
                     </ul>
-                    <!-- </details>
-                    </button> -->
+                    
                 </div>
             </nav>
 
         </div>
         <div>
+            <!--To show the outcome of the quiz from Javascript. True/False to users click-->
             <div class="outcome">Good Luck!
 
             </div>
             <div>
+                <!--To show the questions from Javascript-->
                 <span id="questionbay"></span>
             </div>
             <div>
-
+<!--To show the 3 answer options from Javascript-->
                 <button type="text" id="answer1" class="check-decoration"></button>
                 <button type="text" id="answer2" class="check-decoration"></button>
                 <button type="text" id="answer3" class="check-decoration"></button>
             </div>
             <div>
+                <!--To start the game from Javascript-->
                 <button data-type="start" class="style-submit-box">Start Game</button>
+                <!--To submit the user choice-->
                 <button data-type="submit" class="style-submit-box" id="check"><strong>Submit</strong></button>
-
+<!--To show the next question to the user from Javascript-->
                 <button data-type="next" class="style-submit-box">Next</button>
             </div>
         </div>
@@ -102,11 +102,13 @@
 
 
     </div>
+    <!--Tally score for scores from Javascript quiz-->
     <div class="tally-zone">Tally zone
-        <span >Correct:<span id="correct">0</span></span>
-        <div id="x1" class="x-pup"></div>
-        <span >Incorrect:<span id="incorrect">0</span></span>
-        <div id="x2" class="x-pup"></div>
+        <!--Number and image input-->
+        <span>Correct:<span id="correct">0</span></span>
+        <span id="x1" class="x-pup" id="imgElement"></span>
+        <span>Incorrect:<span id="incorrect">0</span></span>
+        <span id="x2" class="x-pup" id="imgElement"></span>
     </div>
 
 

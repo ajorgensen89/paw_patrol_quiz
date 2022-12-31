@@ -1,10 +1,13 @@
+/** Set array */
 let questionId = 0;
 // let next = document.getElementsByClassName("next")[0];
 // next.addEventListener("click", () => {
 //     questionId++;
 //     iterate(questionId);
 // });
-
+/**Load DOM content. Create a event listener on buttons via click.
+ * Get Attributes from HTML with name of data-type to apply to click functions too.
+ */
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/**setting question array */
+/**setting Paw Patrol Quiz array */
 let numberOfQuestions = [{
         questionId: 0,
         question: "What is naughty Majors name in Paw Patrol who causes problems for the Paw Patrol gang?",
@@ -63,7 +66,6 @@ let numberOfQuestions = [{
                 isCorrect: false
             },
         ],
-
     },
     {
         questionId: 2,
@@ -81,7 +83,6 @@ let numberOfQuestions = [{
                 isCorrect: false
             },
         ]
-
     },
     {
         questionId: 3,
@@ -100,7 +101,6 @@ let numberOfQuestions = [{
             },
 
         ]
-
     },
     {
         questionId: 4,
@@ -118,7 +118,6 @@ let numberOfQuestions = [{
                 isCorrect: true
             },
         ]
-
     },
     {
         questionId: 5,
@@ -139,9 +138,8 @@ let numberOfQuestions = [{
     },
 ];
 
-/** setting function to run quiz via iterating the ID for my questions. */
+/** setting function to run quiz with my my Paw Patrol Quiz Array. */
 function iterate(questionId) {
-    /** getting the window to show the result by class in div*/
     console.log("1");
     /** getting question from array*/
     let questions = document.getElementById("questionbay");
@@ -196,10 +194,12 @@ answer3.addEventListener("click", () => {
 });
 // let check = document.getElementsById("check");
 function checkAnswer() {
-    /** To show the user the outcome of their selected answer */
+    /** Getting the window to show the result to the user within a div*/
     let outcome = document.getElementsByClassName("outcome");
+    /** Setting outcome as empty */
     outcome[0].textContent = "";
     /**Comfirm the view of correct or incorrect choices for user with different text and color to the text */
+
     /**get html element check from html */
     // check[0].addEventListener("click", checkAnswer()); {
     if (confirm == "true") {
@@ -213,7 +213,6 @@ function checkAnswer() {
         incrementWrongAnswer();
         console.log("false n R incorrect");
     }
-
 };
 // };
 /** Function to increment correct score */
@@ -232,6 +231,7 @@ function incrementScore() {
         console.log("image1")
     }
     console.log("6");
+    reset()
 }
 /** Function to increment incorrect score */
 function incrementWrongAnswer() {
@@ -249,4 +249,10 @@ function incrementWrongAnswer() {
         console.log("image2")
     }
     console.log("7");
+    reset()
 }
+/** 1. Reset() pictures/clear() 
+ * 2. End Loop
+ * 3. Default start to quiz should not show Ffalse.
+ * 4.
+ */

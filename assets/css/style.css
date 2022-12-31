@@ -5,9 +5,11 @@ body {
     font-family: 'Luckiest Guy', 'sans-serif';
     text-align: center;
 }
+
 p {
     margin: 30px 0;
 }
+
 h1 {
     font-size: 60px;
     margin: 0;
@@ -31,13 +33,12 @@ details {
 
 }
 
-/*Logo*/
-img {
-    height: 50px;
-    width: 50px;
+/*Head Title */
+.introduction {
+    line-height: 40px;
 }
 
-/*Take away list and anchor decorations (apart from the dropdown default menu arrow)*/
+/*Take away list and anchor decorations*/
 li,
 a {
     list-style-type: none;
@@ -48,7 +49,7 @@ ol {
     padding-left: 0;
 }
 
-/*Input and button box CSS*/
+/*Input and Button box styling*/
 .style-username-box {
     text-align: center;
     width: 300px;
@@ -69,6 +70,18 @@ ol {
     width: 100px;
 }
 
+.button-border {
+    text-decoration: none;
+    border: none;
+    /* background-color: rgb(201, 177, 223); */
+}
+
+.check-decoration {
+    outline: none;
+    background-color: rgb(201, 177, 223);
+    border: none;
+}
+
 /*games board*/
 .game-border-first {
     /* background-image: url('../images/Everestbackground.png'); */
@@ -81,6 +94,8 @@ ol {
     padding: 0 1% 1% 1%;
 
 }
+
+.game-border-second {}
 
 /*Navigation links*/
 .navigation1 {
@@ -97,8 +112,7 @@ a:hover {
     color: rgb(228, 120, 6);
 }
 
-.game-border-second {}
-
+/*Seeting Tally scores area */
 .tally-zone {
     width: 90%;
     height: 90%;
@@ -107,28 +121,12 @@ a:hover {
 
 }
 
-.button-border {
-    text-decoration: none;
-    border: none;
-    /* background-color: rgb(201, 177, 223); */
-}
-
-.introduction {
-    line-height: 40px;
-}
-
-.check-decoration {
-    outline: none;
-    background-color: rgb(201, 177, 223);
-    border: none;
-}
-
-
-/* Increment score images for correct and incorrect*/
+/* Increment score image position for correct and incorrect*/
 .x-pup {
-    width: 50px;
-    height: 100px;
+    width: 60px;
+    height: 120px;
 }
+
 /* media query*/
 
 @media screen and (max-width: 690px) {
