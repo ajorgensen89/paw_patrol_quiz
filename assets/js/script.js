@@ -19,9 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 iterate(questionId);
             } else if (this.getAttribute("data-type") === "next") {
                 event.preventDefault();
+                // if (questionId < 2) {
+                //     questionId++;
+                //     iterate(questionId);
+                //     console.log("oknext");
+                // } 
+                // else {
+                //     `href="score"`
+                // };
                 questionId++;
                 iterate(questionId);
-                console.log("oknext");
             } else(this.getAttribute("data-type") === "submit"); {
                 event.preventDefault();
                 checkAnswer();
@@ -138,37 +145,6 @@ let numberOfQuestions = [{
     },
 ];
 
-/** setting function to run quiz with my my Paw Patrol Quiz Array. */
-function iterate(questionId) {
-    console.log("1");
-    /** getting question from array*/
-    let questions = document.getElementById("questionbay");
-    /**getting inner text of the question in my array */
-    questions.textContent = numberOfQuestions[questionId].question;
-    /**loop questions and stop after 3 questions */
-    for (let questionId = 0; questionId < numberOfQuestions.length; questionId++) {
-        if (questionId <= 3) {
-            console.log("prt")
-        } else {
-            console.log("sd")
-        };
-    };
-    /**Getting my 3 different answer choice boxs from html */
-    let answer1 = document.getElementById("answer1");
-    let answer2 = document.getElementById("answer2");
-    let answer3 = document.getElementById("answer3");
-    console.log("2");
-    /** getting innertext of my answer choices from my answer arrays */
-    answer1.textContent = numberOfQuestions[questionId].answers[0].choice;
-    answer2.textContent = numberOfQuestions[questionId].answers[1].choice;
-    answer3.textContent = numberOfQuestions[questionId].answers[2].choice;
-    /** idenifying the correct option from the answer in the array */
-    answer1.value = numberOfQuestions[questionId].answers[0].isCorrect;
-    answer2.value = numberOfQuestions[questionId].answers[1].isCorrect;
-    answer3.value = numberOfQuestions[questionId].answers[2].isCorrect;
-    console.log("3");
-}
-
 let confirm = "";
 /** Add event listeners to the 3 answers when the corret or incorrect button is clicked*/
 answer1.addEventListener("click", () => {
@@ -192,24 +168,62 @@ answer3.addEventListener("click", () => {
     confirm = answer3.value;
     console.log("answer3 clicked correct")
 });
+
+/** setting function to run quiz with my my Paw Patrol Quiz Array. */
+function iterate(questionId) {
+    console.log("1");
+    /** getting question from array*/
+    let questions = document.getElementById("questionbay");
+    /**getting inner text of the question in my array */
+    questions.textContent = numberOfQuestions[questionId].question;
+
+    /**loop questions and stop after 3 questions */
+
+    // for (questionId = 0; questionId < questionId.length; questionId++) {
+    //     if (questionId <= 3) {
+    //         console.log("prt")
+    //     } else {
+    //         console.log("sd")
+    //     };
+    // };
+
+    /**Getting my 3 different answer choice boxs from html */
+    let answer1 = document.getElementById("answer1");
+    let answer2 = document.getElementById("answer2");
+    let answer3 = document.getElementById("answer3");
+    console.log("2");
+    /** getting innertext of my answer choices from my answer arrays */
+    answer1.textContent = numberOfQuestions[questionId].answers[0].choice;
+    answer2.textContent = numberOfQuestions[questionId].answers[1].choice;
+    answer3.textContent = numberOfQuestions[questionId].answers[2].choice;
+    /** idenifying the correct option from the answer in the array */
+    answer1.value = numberOfQuestions[questionId].answers[0].isCorrect;
+    answer2.value = numberOfQuestions[questionId].answers[1].isCorrect;
+    answer3.value = numberOfQuestions[questionId].answers[2].isCorrect;
+    console.log("3");
+}
+
 // let check = document.getElementsById("check");
 function checkAnswer() {
+
     /** Getting the window to show the result to the user within a div*/
     let outcome = document.getElementsByClassName("outcome");
     /** Setting outcome as empty */
     outcome[0].textContent = "";
-    /**Comfirm the view of correct or incorrect choices for user with different text and color to the text */
+    /**Confirm the view of correct or incorrect choices for user with different text and color to the text */
 
     /**get html element check from html */
     // check[0].addEventListener("click", checkAnswer()); {
     if (confirm == "true") {
         outcome[0].textContent = "True";
         outcome[0].style.color = "blue";
+
         incrementScore();
         console.log("true n G correct");
     } else {
         outcome[0].textContent = "Ffalse";
         outcome[0].style.color = "purple";
+
         incrementWrongAnswer();
         console.log("false n R incorrect");
     }
@@ -231,7 +245,7 @@ function incrementScore() {
         console.log("image1")
     }
     console.log("6");
-    reset()
+    // reset()
 }
 /** Function to increment incorrect score */
 function incrementWrongAnswer() {
@@ -249,7 +263,7 @@ function incrementWrongAnswer() {
         console.log("image2")
     }
     console.log("7");
-    reset()
+    // reset()
 }
 /** 1. Reset() pictures/clear() 
  * 2. End Loop
