@@ -1,44 +1,45 @@
 /** Set array */
 let questionId = 0;
-// let next = document.getElementsByClassName("next")[0];
-// next.addEventListener("click", () => {
-//     questionId++;
-//     iterate(questionId);
-// });
-/**Load DOM content. Create a event listener on buttons via click.
- * Get Attributes from HTML with name of data-type to apply to click functions too.
- */
-document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
 
-    for (let button of buttons) {
-        button.addEventListener("click", function (event) {
-            if (this.getAttribute("data-type") === "start") {
-                event.preventDefault();
-                console.log("yesilistened");
-                iterate(questionId);
-            } else if (this.getAttribute("data-type") === "next") {
-                event.preventDefault();
-                // if (questionId < 2) {
-                //     questionId++;
-                //     iterate(questionId);
-                //     console.log("oknext");
-                // } 
-                // else {
-                //     `href="score"`
-                // };
-                questionId++;
-                iterate(questionId);
-            } else(this.getAttribute("data-type") === "submit"); {
-                event.preventDefault();
-                checkAnswer();
-                console.log("checkanswer");
-            };
-        });
-    }
+/** Click functions created from 'start', 'next' and 'submit' id's.
+ */
+/**click function to start the game iterating questions from numberOfQuestion array */
+document.addEventListener("DOMContentLoaded", function (event) {
+    let starts = document.getElementById("start");
+    start.addEventListener("click", function () {
+        event.preventDefault();
+        console.log("yesilistened");
+        questionId++;
+        iterate(questionId);
+
+    });
+});
+document.addEventListener("DOMContentLoaded", function (event) {
+    let nexts = document.getElementById("next");
+    next.addEventListener("click", function () {
+        event.preventDefault();
+        console.log("yesilistened");
+        if (questionId < 3) {
+            questionId++;
+            iterate(questionId);
+            console.log("iterating")
+            reset();
+        } else {
+            alert(`Well done. See your score in the Tally Zone below. Press OK and then click 'start game' if you want to try the quiz again!
+            Thanks for playing!`)
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function (event) {
+    let submits = document.getElementById("submit");
+    submit.addEventListener("click", function () {
+        event.preventDefault();
+        checkAnswer();
+        console.log("checkanswer");
+
+    });
 });
 
-/**setting Paw Patrol Quiz array */
 let numberOfQuestions = [{
         questionId: 0,
         question: "What is naughty Majors name in Paw Patrol who causes problems for the Paw Patrol gang?",
@@ -145,26 +146,30 @@ let numberOfQuestions = [{
     },
 ];
 
+// function colourReset() {
+
+// }
+
 let confirm = "";
 /** Add event listeners to the 3 answers when the corret or incorrect button is clicked*/
 answer1.addEventListener("click", () => {
-    answer1.style.backgroundColor = "green";
-    answer2.style.backgroundColor = "red";
-    answer3.style.backgroundColor = "red";
+    answer1.style.backgroundColor = "white";
+    answer2.style.backgroundColor = "rgb(201, 177, 223);";
+    answer3.style.backgroundColor = "rgb(201, 177, 223);";
     confirm = answer1.value;
     console.log("answer1 clicked correct")
 });
 answer2.addEventListener("click", () => {
-    answer1.style.backgroundColor = "red";
-    answer2.style.backgroundColor = "green";
-    answer3.style.backgroundColor = "red";
+    answer1.style.backgroundColor = "rgb(201, 177, 223);";
+    answer2.style.backgroundColor = "white";
+    answer3.style.backgroundColor = "rgb(201, 177, 223);";
     confirm = answer2.value;
     console.log("answer2 clicked correct")
 });
 answer3.addEventListener("click", () => {
-    answer1.style.backgroundColor = "red";
-    answer2.style.backgroundColor = "red";
-    answer3.style.backgroundColor = "green";
+    answer1.style.backgroundColor = "rgb(201, 177, 223);";
+    answer2.style.backgroundColor = "rgb(201, 177, 223);";
+    answer3.style.backgroundColor = "white";
     confirm = answer3.value;
     console.log("answer3 clicked correct")
 });
@@ -172,20 +177,11 @@ answer3.addEventListener("click", () => {
 /** setting function to run quiz with my my Paw Patrol Quiz Array. */
 function iterate(questionId) {
     console.log("1");
+
     /** getting question from array*/
     let questions = document.getElementById("questionbay");
     /**getting inner text of the question in my array */
     questions.textContent = numberOfQuestions[questionId].question;
-
-    /**loop questions and stop after 3 questions */
-
-    // for (questionId = 0; questionId < questionId.length; questionId++) {
-    //     if (questionId <= 3) {
-    //         console.log("prt")
-    //     } else {
-    //         console.log("sd")
-    //     };
-    // };
 
     /**Getting my 3 different answer choice boxs from html */
     let answer1 = document.getElementById("answer1");
@@ -205,7 +201,6 @@ function iterate(questionId) {
 
 // let check = document.getElementsById("check");
 function checkAnswer() {
-
     /** Getting the window to show the result to the user within a div*/
     let outcome = document.getElementsByClassName("outcome");
     /** Setting outcome as empty */
@@ -229,42 +224,55 @@ function checkAnswer() {
     }
 };
 // };
+
+/** Gained with help from Slack commmunity with adjustments added. */
+function reset() {
+    if (img === img); {
+        let reset1 = document.getElementById("x1");
+        reset1.parentNode.removeChild(reset1);
+        let reset2 = document.getElementById("x2");
+        reset2.parentNode.removeChild(reset2);
+    }
+}
+
 /** Function to increment correct score */
 function incrementScore() {
     /**Gets the current tally of correct answers and increments it by 1
-     * let functions taken and adjusted from Love-Maths Walkthrough project
-     */
-    let oldScore = parseInt(document.getElementById("correct").innerText);
-    document.getElementById("correct").innerText = ++oldScore;
-    /** Image input and 'if' statement for correct answer. Show inside element with Id="x1" */
+     * 'let functions' taken and adjusted from Love-Maths Walkthrough project     */
+    let oldScoreCorrect = parseInt(document.getElementById("correct").innerText);
+    document.getElementById("correct").innerText = ++oldScoreCorrect;
+    /** Image input and 'if' statement for correct answer. Show inside element with Id="x1". 
+     * Code credit to moonbooks.org and adjusted accordingly */
     let img = document.createElement("img");
     img.src = "../assets/images/yesPupCP.png";
-    let imageBlock = document.getElementById("x1");
-    if (oldScore = +1) {
-        imageBlock.appendChild(img);
+    let imageBlock1 = document.getElementById("x1");
+    if (oldScoreCorrect = +1) {
+        imageBlock1.appendChild(img);
         console.log("image1")
     }
     console.log("6");
-    // reset()
+
 }
+
 /** Function to increment incorrect score */
 function incrementWrongAnswer() {
     /**Gets the current tally of incorrect answers and increments it by 1
-     * let functions taken and adjusted from Love-Maths Walkthrough project
-     */
-    let oldScore = parseInt(document.getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;
-    /** Image input and 'if' statement for incorrect answer. Show inside element with Id="x2" */
+     * 'let functions' taken and adjusted from Love-Maths Walkthrough project */
+    let oldScoreIncorrect = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScoreIncorrect;
+    /** Image input and 'if' statement for incorrect answer. Show inside element with Id="x2". 
+     * Code credit to moonbooks.org and adjusted accordingly */
     let img = document.createElement("img");
     img.src = "../assets/images/NoPupCP.png";
-    let imageBlock = document.getElementById("x2");
-    if (oldScore = +1) {
-        imageBlock.appendChild(img);
+    let imageBlock2 = document.getElementById("x2");
+    if (oldScoreIncorrect = +1) {
+        imageBlock2.appendChild(img);
         console.log("image2")
+
     }
     console.log("7");
-    // reset()
 }
+
 /** 1. Reset() pictures/clear() 
  * 2. End Loop
  * 3. Default start to quiz should not show Ffalse.

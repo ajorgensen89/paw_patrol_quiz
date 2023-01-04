@@ -34,13 +34,10 @@ HTML, CSS and JavaScript has been used together for this project to produce a mu
 # Featuresfeatures
 
 ***
-### Footer
-
-***
 ### Future features
 
 ***
-Testing](testing.md)
+# [Testing](testing.md)
 
 
 # Design
@@ -70,23 +67,22 @@ One of the characters in Paw Patrol is Everest. I used her colours throughout th
 * Icons from [Font Awesome](https://fontawesome.com/)
 * Wireframe from [Balsamiq](https://balsamiq.com/)
 * [Favicon Icon](https://www.favicon-generator.org/) generator wesbite
-* Favicon [image](https://www.bing.com/images/search?view=detailV2&ccid=%2BJyjEgf8&id=1C9235A2E43F8DACE3ABFA5ECA46B0C6EA59D9CF&thid=OIP.-JyjEgf8_qN5SGjxre2cngHaIB&mediaurl=https%3A%2F%2Fwww.vippng.com%2Fpng%2Fdetail%2F223-2230436_stickerbygoodcat30-everest-pawpatrol-everestpawpatrol-paw-patrol-everest.png&exph=996&expw=920&q=everest+paw+patrol&simid=608045310985327084&form=IRPRST&ck=D75FA36506DA9C1F967833C435131981&selectedindex=5&ajaxhist=0&ajaxserp=0&vt=0&sim=11&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.f89ca31207fcfea3794868f1aded9c9e%3Frik%3Dz9lZ6sawRspe%252bg%26pid%3DImgRaw%26r%3D0) source
-
-Issue
-![Microsoft Inspect Example](assets/images-readme/Inspectpadding.png)
-
-Fix
-![Microsoft Inspect Example](assets/images-readme/Inspectpaddingfix.png)
+* Favicon [image](https://www.bing.com/images/search?view=detailV2&ccid=%2BJyjEgf8&id=1C9235A2E43F8DACE3ABFA5ECA46B0C6EA59D9CF&thid=OIP.-JyjEgf8_qN5SGjxre2cngHaIB&mediaurl=https%3A%2F%2Fwww.vippng.com%2Fpng%2Fdetail%2F223-2230436_stickerbygoodcat30-everest-pawpatrol-everestpawpatrol-paw-patrol-everest.png&exph=996&expw=920&q=everest+paw+patrol&simid=608045310985327084&form=IRPRST&ck=D75FA36506DA9C1F967833C435131981&selectedindex=5&ajaxhist=0&ajaxserp=0&vt=0&sim=11&cdnurl=https%3A%2F%2Fth.bing.
+com%2Fth%2Fid%2FR.f89ca31207fcfea3794868f1aded9c9e%3Frik%3Dz9lZ6sawRspe%252bg%26pid%3DImgRaw%26r%3D0) source
+* [Moonbooks](https://www.moonbooks.org/Articles/How-to-add-an-image-in-a-HTML-page-using-javascript-/#:~:text=How%20to%20add%20an%20image%20in%20a%20HTML,do%20you%20insert%20an%20image%20in%20Javascript%3F%20) for code regarding adding images to correct and incorrect scores.
+* [geekforgeeks](https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/) to help create my links to certain indexs in my numberOfQuestions array for the quiz.
+* [Python Tutor](https://pythontutor.com/visualize.html#mode=edit) for assiting with viewing my javascript when building code.
+* [Pinterest](https://in.pinterest.com/pin/paw-patrol--414683078182219373/)
+* [Cartoon Goodies](https://cartoongoodies.com/png-images/paw-patrol-png-images/)
 
 help with quiz
 https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/
 
-assist with loops
+Assist with loops anf functions
 https://pythontutor.com/visualize.html#mode=edit
 
 Code used for inputing Images to javascript and HTML.
 https://www.moonbooks.org/Articles/How-to-add-an-image-in-a-HTML-page-using-javascript-/#:~:text=How%20to%20add%20an%20image%20in%20a%20HTML,do%20you%20insert%20an%20image%20in%20Javascript%3F%20
-
 
 
 Sad Everest picture for incorrect score
@@ -94,3 +90,5 @@ https://in.pinterest.com/pin/paw-patrol--414683078182219373/
 
 Happy Everest Puppy picture for correct score
 https://cartoongoodies.com/png-images/paw-patrol-png-images/
+
+w3schools.
